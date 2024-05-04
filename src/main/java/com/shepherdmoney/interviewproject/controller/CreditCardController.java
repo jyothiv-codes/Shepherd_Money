@@ -98,7 +98,7 @@ public class CreditCardController {
         }
 
     }
-    /*
+
     @PostMapping("/credit-card:update-balance")
     public ResponseEntity<Object> postMethodName(@RequestBody UpdateBalancePayload[] payload) {
         //TODO: Given a list of transactions, update credit cards' balance history.
@@ -122,7 +122,7 @@ public class CreditCardController {
                 return ResponseEntity.badRequest().build();
             }
             //return ResponseEntity.ok(creditCard.getOwnerId());
-            TreeMap<LocalDate, Object> balanceHistory = creditCard.getBalanceHistory();
+            TreeMap<LocalDate, BalanceHistory> balanceHistory = creditCard.getBalanceHistory();
             if (balanceHistory.isEmpty()){
                 balanceHistory.put(updateBalancePayload.getBalanceDate(),balance);
                 balanceRepo.save(balance);
@@ -210,6 +210,6 @@ public class CreditCardController {
         }
 
         return ResponseEntity.ok().build();
-    }*/
+    }
 
 }
